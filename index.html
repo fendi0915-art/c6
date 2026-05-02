@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -16,139 +17,192 @@
 }
 
 body{
-  background:#0a0a0a;
+  background:#080808;
   color:#f5f5f5;
   font-family:'Playfair Display',serif;
   overflow-x:hidden;
 }
 
+/* NAV */
+
 nav{
   position:fixed;
   top:0;
   width:100%;
-  background:rgba(0,0,0,.82);
+  background:rgba(0,0,0,.68);
   backdrop-filter:blur(10px);
   display:flex;
   justify-content:center;
-  gap:18px;
-  padding:16px;
+  gap:22px;
+  padding:18px;
   z-index:999;
-  overflow-x:auto;
 }
 
 nav a{
   color:#d4af37;
   text-decoration:none;
-  font-size:12px;
+  font-size:13px;
   letter-spacing:2px;
-  white-space:nowrap;
 }
 
+/* SECTION */
+
 section{
-  min-height:100vh;
-  padding:100px 20px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  padding:110px 24px;
   text-align:center;
 }
 
 h1,h2,h3{
   font-family:'Cinzel',serif;
-  letter-spacing:3px;
-}
-
-h1{
-  font-size:70px;
-  color:#d4af37;
+  letter-spacing:4px;
 }
 
 h2{
-  font-size:34px;
-  margin-bottom:35px;
+  font-size:38px;
   color:#d4af37;
-}
-
-h3{
-  font-size:28px;
-  margin-top:90px;
-  margin-bottom:28px;
+  margin-bottom:40px;
 }
 
 p{
-  max-width:850px;
+  max-width:900px;
+  margin:16px auto;
   line-height:2;
-  color:#cfcfcf;
-  margin:15px auto;
+  color:#dddddd;
 }
 
+/* HERO */
+
 .hero{
-  padding-top:130px;
+  position:relative;
+
+  min-height:100vh;
+
+  background-image:url('hero-main.jpg');
+  background-size:cover;
+  background-position:center 25%;
+  background-repeat:no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  overflow:hidden;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.58) 45%,
+    rgba(0,0,0,0.90) 100%
+  );
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  text-align:center;
+
+  margin-top:-180px;
+}
+
+.hero h1{
+  font-size:92px;
+  color:#e0c15b;
+  text-shadow:0 5px 25px rgba(0,0,0,.5);
 }
 
 .hero-sub{
-  color:#d4af37;
-  letter-spacing:4px;
-  margin-top:18px;
+  margin-top:22px;
+  color:#e0c15b;
+  letter-spacing:5px;
+  font-size:20px;
 }
 
-.hero-image{
-  width:88%;
-  max-width:1100px;
-  height:420px;
-  object-fit:cover;
-  object-position:center 35%;
-  border-radius:24px;
-  display:block;
-  margin:40px auto 0;
-  box-shadow:0 25px 80px rgba(0,0,0,.65);
+.hero-desc{
+  margin-top:28px;
+  color:#f2f2f2;
+  font-size:20px;
 }
 
-.main-img{
-  width:88%;
-  max-width:620px;
-  border-radius:18px;
-  margin:35px 0;
-  box-shadow:0 25px 80px rgba(0,0,0,.65);
-}
+/* GALLERY */
 
 .gallery{
   width:100%;
-  max-width:1150px;
+  max-width:1180px;
+
+  margin:38px auto 0;
+
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:18px;
-  margin-top:28px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
 
 .gallery img{
   width:100%;
   aspect-ratio:1/1;
+
   object-fit:cover;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.55);
+
+  border-radius:18px;
+
   transition:.35s;
+
+  box-shadow:0 12px 40px rgba(0,0,0,.45);
 }
 
 .gallery img:hover{
   transform:scale(1.03);
 }
 
-.price{
-  font-size:38px;
-  color:#d4af37;
-  margin-top:28px;
+/* PRODUCT */
+
+.main-img{
+  width:90%;
+  max-width:700px;
+
+  border-radius:24px;
+
+  margin:35px auto;
+
+  display:block;
+
+  box-shadow:0 20px 70px rgba(0,0,0,.55);
 }
+
+h3{
+  margin-top:100px;
+  margin-bottom:30px;
+  font-size:30px;
+}
+
+.price{
+  font-size:42px;
+  color:#e0c15b;
+  margin-top:40px;
+}
+
+/* BUTTON */
 
 .btn{
   display:inline-block;
+
   margin:12px;
-  padding:14px 30px;
+  padding:15px 34px;
+
   border:1px solid #d4af37;
+
   color:#d4af37;
   text-decoration:none;
-  letter-spacing:1px;
+
+  letter-spacing:2px;
+
   transition:.3s;
 }
 
@@ -157,64 +211,139 @@ p{
   color:#000;
 }
 
+/* FOOTER */
+
 .small{
-  margin-top:40px;
-  font-size:13px;
-  color:#777;
+  margin-top:45px;
+  color:#888;
   line-height:2;
+  font-size:13px;
 }
 
 footer{
   border-top:1px solid #222;
-  padding:50px 20px;
+  padding:60px 20px;
+  color:#777;
   text-align:center;
-  color:#666;
 }
 
+/* PAGE ARROWS */
+
+.page-arrow{
+  position:fixed;
+  bottom:30px;
+  z-index:999;
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+  border:1px solid rgba(212,175,55,.7);
+
+  background:rgba(0,0,0,.55);
+
+  color:#d4af37;
+
+  text-decoration:none;
+
+  font-size:42px;
+  line-height:48px;
+  text-align:center;
+
+  transition:.3s;
+}
+
+.page-arrow:hover{
+  background:#d4af37;
+  color:#000;
+}
+
+.left-arrow{
+  left:28px;
+}
+
+.right-arrow{
+  right:28px;
+}
+
+/* MOBILE */
+
 @media(max-width:768px){
-  h1{
-    font-size:46px;
+
+  nav{
+    gap:14px;
+    padding:15px;
+    overflow-x:auto;
+  }
+
+  nav a{
+    font-size:11px;
+  }
+
+  .hero{
+    background-position:center center;
+  }
+
+  .hero-content{
+    margin-top:-80px;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .hero-sub{
+    font-size:15px;
+  }
+
+  .hero-desc{
+    font-size:16px;
   }
 
   h2{
     font-size:28px;
   }
 
-  .hero-image{
-    width:94%;
-    height:330px;
-    object-position:center center;
-  }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+
 <nav>
   <a href="#home">HOME</a>
   <a href="#story">STORY</a>
-  <a href="#artist">ARTIST</a>
+  <a href="#artist">LOOKBOOK</a>
   <a href="#product">PRODUCT</a>
-  <a href="#custom">CUSTOM</a>
   <a href="#order">ORDER</a>
 </nav>
 
+<!-- HERO -->
+
 <section id="home" class="hero">
 
-  <h1>絲媛 SIYÆ</h1>
+  <div class="hero-overlay"></div>
 
-  <p class="hero-sub">
-    HANDMADE VIOLIN CASE
-  </p>
+  <div class="hero-content">
 
-  <p>
-    Designed for musicians with presence.
-  </p>
+    <h1>絲媛 SIYÆ</h1>
 
-  <img src="hero-main.jpg" class="hero-image" alt="絲媛 SIYÆ 主視覺">
+    <p class="hero-sub">
+      HANDMADE VIOLIN CASE
+    </p>
+
+    <p class="hero-desc">
+      Designed for musicians with presence.
+    </p>
+
+  </div>
 
 </section>
+
+<!-- STORY -->
 
 <section id="story">
 
@@ -240,39 +369,60 @@ footer{
 
 </section>
 
+<!-- LOOKBOOK -->
+
 <section id="artist">
 
   <h2>ARTIST LOOKBOOK</h2>
 
   <p>
-    職業演奏者的舞台日常與移動美學。<br>
-    從音樂廳、排練場到城市旅程，<br>
-    琴盒不只是保護，
+    職業演奏者的舞台日常與移動美學。<br><br>
+
+    從音樂廳、排練場到城市旅程。<br>
+
+    琴盒不只是保護，<br>
+
     更是風格的一部分。
   </p>
 
   <div class="gallery">
+
     <img src="hero-main.jpg">
+
     <img src="orange-lifestyle.jpg">
+
     <img src="orange-artist.jpg">
+
     <img src="orange-tree.jpg">
+
   </div>
 
 </section>
+
+<!-- PRODUCT -->
 
 <section id="product">
 
   <h2>PRODUCT DETAILS</h2>
 
-  <h3 style="color:#ff9d57;">ARTISTIC ORANGE</h3>
+  <!-- ORANGE -->
+
+  <h3 style="color:#ff9d57;">
+    ARTISTIC ORANGE
+  </h3>
 
   <img src="orange-main.jpg" class="main-img">
 
   <div class="gallery">
+
     <img src="orange-main.jpg">
+
     <img src="orange-1.jpg">
+
     <img src="orange-2.jpg">
+
     <img src="orange-3.jpg">
+
   </div>
 
   <p>
@@ -280,15 +430,24 @@ footer{
     最具舞台感與藝術張力的高訂版本。
   </p>
 
-  <h3 style="color:#bdbdbd;">CLASSIC GREY</h3>
+  <!-- GREY -->
+
+  <h3 style="color:#c8c8c8;">
+    CLASSIC GREY
+  </h3>
 
   <img src="grey-main.jpg" class="main-img">
 
   <div class="gallery">
+
     <img src="grey-main.jpg">
+
     <img src="grey-1.jpg">
+
     <img src="grey-2.jpg">
+
     <img src="grey-3.jpg">
+
   </div>
 
   <p>
@@ -297,15 +456,24 @@ footer{
     適合正式演出與長期使用。
   </p>
 
-  <h3 style="color:#f2c94c;">IMPERIAL GOLD</h3>
+  <!-- GOLD -->
+
+  <h3 style="color:#f2c94c;">
+    IMPERIAL GOLD
+  </h3>
 
   <img src="gold-main.jpg" class="main-img">
 
   <div class="gallery">
+
     <img src="gold-main.jpg">
+
     <img src="gold-1.jpg">
+
     <img src="gold-2.jpg">
+
     <img src="gold-3.jpg">
+
   </div>
 
   <p>
@@ -318,37 +486,9 @@ footer{
     NT$42,000
   </div>
 
-  <p>
-    頭層牛皮｜天然染劑｜
-    全金屬五金｜全手工拉皮｜
-    耐刮耐磨｜防潑水
-  </p>
-
 </section>
 
-<section id="custom">
-
-  <h2>CUSTOM COLOR</h2>
-
-  <p>
-    提供專屬客製化顏色與皮革搭配服務。
-  </p>
-
-  <p>
-    可依個人風格、
-    舞台需求或收藏偏好進行設計。
-  </p>
-
-  <p>
-    工廠成立30年以上，
-    高訂品質製作。
-  </p>
-
-  <p>
-    貨到時間約3週至1個月。
-  </p>
-
-</section>
+<!-- ORDER -->
 
 <section id="order">
 
@@ -363,31 +503,29 @@ footer{
     可領取9折折扣碼。
   </p>
 
-  <a class="btn" href="https://buy.stripe.com/" target="_blank">
-    CARD PAYMENT
+  <a class="btn" href="https://instagram.com/ssuyuan_chang_fendi" target="_blank">
+    INSTAGRAM
   </a>
 
   <a class="btn" href="https://line.me/" target="_blank">
     LINE ORDER
   </a>
 
-  <a class="btn" href="https://instagram.com/ssuyuan_chang_fendi" target="_blank">
-    INSTAGRAM
-  </a>
-
-  <div class="small">
-    FB｜張絲媛<br>
-    LINE｜fendi-chang<br>
-    IG｜ssuyuan_chang_fendi<br>
-    Threads｜ssuyuan_chang_fendi
-  </div>
-
 </section>
 
 <footer>
-  絲媛 SIYÆ<br>
+
+  絲媛 SIYÆ<br><br>
+
   Handmade Violin Case Collection
+
 </footer>
+
+<!-- PAGE -->
+
+<a class="page-arrow left-arrow" href="teaching.html">‹</a>
+
+<a class="page-arrow right-arrow" href="tour.html">›</a>
 
 </body>
 </html>
