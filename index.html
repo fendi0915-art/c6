@@ -134,6 +134,24 @@ p{
   font-size:20px;
 }
 
+.chanel-blur{
+    position:absolute;
+
+    top:16%;
+    left:34%;
+
+    width:32%;
+    height:24%;
+
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+
+    background:rgba(255,255,255,0.08);
+
+    z-index:1;
+    pointer-events:none;
+}  
+  
 /* GALLERY */
 
 .gallery{
@@ -323,7 +341,7 @@ footer{
 <!-- HERO -->
 
 <section id="home" class="hero">
-
+  <div class="chanel-blur"></div>
   <div class="hero-content">
 
     <h1>絲媛 SIYÆ</h1>
