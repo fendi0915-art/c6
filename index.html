@@ -81,208 +81,74 @@ p{
 /* HERO */
 
 .hero{
-  position:relative;
-  min-height:100vh;
+  position: relative;
+  min-height: 92vh;
+  background: #000;
+  overflow: hidden;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.18) 0%,
-      rgba(0,0,0,0.30) 35%,
-      rgba(0,0,0,0.82) 100%
-    ),
-    url('hero-new.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background-size:80%;
-  background-repeat:no-repeat;
-  background-position:center 120%;
-  background-color:#080808;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  overflow:hidden;
+  padding: 120px 40px 110px;
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
-
-  width:100%;
-  text-align:center;
-
-  margin-top:-120px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.hero h1{
-  font-size:72px;
-  color:#e0c15b;
-  text-shadow:0 5px 25px rgba(0,0,0,.55);
+.hero-logo{
+  width: min(30vw, 420px);
+  margin: 0 auto 32px;
+  display: block;
+}
+
+.hero-title{
+  font-size: clamp(52px, 6vw, 96px);
+  line-height: 1.05;
+  margin-bottom: 26px;
+  color: #d4af5f;
 }
 
 .hero-sub{
-  margin-top:22px;
-  color:#e0c15b;
-  letter-spacing:5px;
-  font-size:20px;
+  font-size: clamp(16px, 1.4vw, 24px);
+  letter-spacing: .35em;
+  margin-bottom: 42px;
+  color: #d4af5f;
 }
 
-.hero-desc{
-  margin-top:28px;
-  color:#f2f2f2;
-  font-size:20px;
+.hero-text{
+  font-size: clamp(18px, 1.5vw, 28px);
+  line-height: 1.8;
+  color: #fff;
+  opacity: .92;
 }
+
+/* CHANEL 模糊 */
 
 .chanel-blur{
-    position:absolute;
+  position:absolute;
 
-    top:14%;
-    left:38%;
+  top:12%;
+  left:36%;
 
-    width:19%;
-    height:15%;
+  width:16%;
+  height:12%;
 
-    backdrop-filter:blur(4px);
-    -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
 
-    background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,.05);
 
-    z-index:1;
-    pointer-events:none;
-}  
-  
-/* GALLERY */
-
-.gallery{
-  width:100%;
-  max-width:1180px;
-
-  margin:18px auto 0;
-
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:20px;
+  z-index:1;
+  pointer-events:none;
 }
 
-.gallery img{
-  width:100%;
-  aspect-ratio:1/1;
-
-  object-fit:cover;
-
-  border-radius:18px;
-
-  transition:.35s;
-
-  box-shadow:0 12px 40px rgba(0,0,0,.45);
-}
-
-.gallery img:hover{
-  transform:scale(1.03);
-}
-
-/* PRODUCT */
-
-.main-img{
-  width:90%;
-  max-width:900px;
-  hight:auto;
-
-  border-radius:24px;
-
-  margin:25px auto 28px;
-
-  display:block;
-
-  box-shadow:0 20px 70px rgba(0,0,0,.55);
-}
-
-.price{
-  font-size:42px;
-  color:#e0c15b;
-  margin-top:40px;
-}
-
-/* BUTTON */
-
-.btn{
-  display:inline-block;
-
-  margin:12px;
-  padding:15px 34px;
-
-  border:1px solid #d4af37;
-
-  color:#d4af37;
-  text-decoration:none;
-
-  letter-spacing:2px;
-
-  transition:.3s;
-}
-
-.btn:hover{
-  background:#d4af37;
-  color:#000;
-}
-
-/* FOOTER */
-
-.small{
-  margin-top:45px;
-  color:#888;
-  line-height:2;
-  font-size:13px;
-}
-
-footer{
-  border-top:1px solid #222;
-  padding:60px 20px;
-  color:#777;
-  text-align:center;
-}
-
-/* PAGE ARROWS */
-
-.page-arrow{
-  position:fixed;
-  bottom:30px;
-  z-index:999;
-
-  width:54px;
-  height:54px;
-
-  border-radius:50%;
-  border:1px solid rgba(212,175,55,.7);
-
-  background:rgba(0,0,0,.55);
-
-  color:#d4af37;
-
-  text-decoration:none;
-
-  font-size:42px;
-  line-height:48px;
-  text-align:center;
-
-  transition:.3s;
-}
-
-.page-arrow:hover{
-  background:#d4af37;
-  color:#000;
-}
-
-.left-arrow{
-  left:28px;
-}
-
-.right-arrow{
-  right:28px;
-}
-
-/* MOBILE */
+/* 手機版 */
 
 @media(max-width:768px){
 
@@ -296,30 +162,46 @@ footer{
   }
 
   .hero{
-    background-size:150%;
-    background-position:center 70%;
+    min-height:64vh;
+    padding:100px 20px 90px;
   }
 
   .hero-content{
-    margin-top:-90px;
+    max-width:92%;
   }
 
-  .hero h1{
-    font-size:52px;
+  .hero-logo{
+    width:74vw;
+    margin-bottom:24px;
+  }
+
+  .hero-title{
+    font-size:54px;
+    margin-bottom:20px;
   }
 
   .hero-sub{
-    font-size:15px;
+    font-size:14px;
+    letter-spacing:.22em;
+    margin-bottom:28px;
   }
 
-  .hero-desc{
-    font-size:16px;
+  .hero-text{
+    font-size:17px;
+    line-height:1.7;
+  }
+
+  .chanel-blur{
+    top:17%;
+    left:24%;
+
+    width:52%;
+    height:10%;
   }
 
   h2{
     font-size:28px;
   }
-
 }
 
 </style>
